@@ -1,16 +1,16 @@
 package net.bastionsg.dev.utils;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
+import java.net.URI;
 import java.net.URL;
 import java.util.Scanner;
 
 public class Net {
 
-	public static String GetReq(String requrl) throws IOException {
-		URL url = new URL(requrl);
+	public static String GetReq(String requrl) throws Exception {
+		URL url = new URI(requrl).toURL();
         HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
         httpConn.setRequestMethod("GET");
 
@@ -23,8 +23,8 @@ public class Net {
         return response;
 	}
 	
-	public static String POSTReq(String requrl, String reqdata) throws IOException {
-		URL url = new URL(requrl);
+	public static String POSTReq(String requrl, String reqdata) throws Exception {
+		URL url = new URI(requrl).toURL();
         HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
         httpConn.setRequestMethod("POST");
 

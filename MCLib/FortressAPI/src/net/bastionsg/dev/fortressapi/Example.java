@@ -1,10 +1,7 @@
 //NOT FOR RELEASE
 package net.bastionsg.dev.fortressapi;
 
-import java.io.IOException;
 import java.util.Scanner;
-
-import net.bastionsg.dev.fortressapi.errors.IncorrectKeyException;
 
 public class Example {
 
@@ -18,7 +15,7 @@ public class Example {
 		
 		try {
 			System.out.println(MCAuth.AuthedProfile(uname, pwd, "bsg", true));
-		} catch (IOException | IncorrectKeyException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -31,7 +28,7 @@ public class Example {
 		
 		try {
 			System.out.println(MCAuth.RefreshToken(accToken, cToken, true));
-		} catch (IOException | IncorrectKeyException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

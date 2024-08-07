@@ -1,7 +1,12 @@
 package net.bastionsg.dev.fortressapi.errors;
 
-public class IncorrectKeyException extends Exception {
-    // Constructor that accepts a message
+public class IncorrectKeyException extends RuntimeException {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 3270966731964653032L;
+
+	// Constructor that accepts a message
     public IncorrectKeyException(String message) {
         super(message);
     }

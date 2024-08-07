@@ -1,6 +1,5 @@
 package net.bastionsg.dev.fortressapi;
 
-import java.io.IOException;
 import java.io.StringReader;
 
 import jakarta.json.Json;
@@ -11,7 +10,7 @@ import net.bastionsg.dev.utils.Net;
 
 public class MCAuth {
 
-	public static String AuthedProfile(String username, String password, String clientToken, boolean requestUser) throws IOException, IncorrectKeyException {
+	public static String AuthedProfile(String username, String password, String clientToken, boolean requestUser) throws Exception, IncorrectKeyException {
 		String JSONResp = Net.POSTReq("https://authserver.ely.by/auth/authenticate", "{\"username\": \""+username+"\",\"password\":\""+password+"\", \"clientToken\": \""+clientToken+"\", \"requestUser\": \""+requestUser+"\"}");
 		JsonReader jsonReader = Json.createReader(new StringReader(JSONResp));
 		JsonObject jsonObject = jsonReader.readObject();
@@ -27,7 +26,7 @@ public class MCAuth {
 		}
 	}
 	
-	public static String RefreshToken(String accessToken, String clientToken, boolean requestUser) throws IOException, IncorrectKeyException {
+	public static String RefreshToken(String accessToken, String clientToken, boolean requestUser) throws Exception, IncorrectKeyException {
 		String JSONResp = Net.POSTReq("https://authserver.ely.by/auth/refresh", "{\"accessToken\": \""+accessToken+"\", \"clientToken\": \""+clientToken+"\", \"requestUser\": \""+requestUser+"\"}");
 		JsonReader jsonReader = Json.createReader(new StringReader(JSONResp));
 		JsonObject jsonObject = jsonReader.readObject();
@@ -43,7 +42,7 @@ public class MCAuth {
 		}
 	}
 	
-	public static boolean ValidateToken(String accessToken) throws IOException, ExpiredTokenException {
+	public static boolean ValidateToken(String accessToken) throws Exception, ExpiredTokenException {
 		String JSONResp = Net.POSTReq("https://authserver.ely.by/auth/validate", "{\"accessToken\": \""+accessToken+"\"}");
 		JsonReader jsonReader = Json.createReader(new StringReader(JSONResp));
 		JsonObject jsonObject = jsonReader.readObject();
@@ -55,7 +54,7 @@ public class MCAuth {
 		}
 	}
 	
-	public static void Signout(String username, String password) throws IOException, IncorrectKeyException {
+	public static void Signout(String username, String password) throws Exception, IncorrectKeyException {
 		String JSONResp = Net.POSTReq("https://authserver.ely.by/auth/signout", "{\"username\": \""+username+"\", \"password\": \""+password+"\"");
 		JsonReader jsonReader = Json.createReader(new StringReader(JSONResp));
 		JsonObject jsonObject = jsonReader.readObject();
@@ -65,7 +64,7 @@ public class MCAuth {
 		}
 	}
 	
-	public static void InvalidateToken(String accessToken, String clientToken) throws IOException, IncorrectKeyException {
+	public static void InvalidateToken(String accessToken, String clientToken) throws Exception, IncorrectKeyException {
 		String JSONResp = Net.POSTReq("https://authserver.ely.by/auth/invalidate", "{\"accessToken\": \""+accessToken+"\", \"clientToken\": \""+clientToken+"\"");
 		JsonReader jsonReader = Json.createReader(new StringReader(JSONResp));
 		JsonObject jsonObject = jsonReader.readObject();

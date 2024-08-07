@@ -1,7 +1,12 @@
 package net.bastionsg.dev.fortressapi.errors;
 
-public class ExpiredTokenException extends Exception {
-    // Constructor that accepts a message
+public class ExpiredTokenException extends RuntimeException {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -7680712294890547412L;
+
+	// Constructor that accepts a message
     public ExpiredTokenException(String message) {
         super(message);
     }
