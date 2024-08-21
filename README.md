@@ -1,5 +1,5 @@
 # MCLib - Java Minecraft Utilities
-![Java 8](https://img.shields.io/badge/Java-8-%23f89820?labelColor=%235382a1) ![Ely.by Approved](https://img.shields.io/badge/Ely.by-Approved-brightgreen) ![Bastion GLP License](https://img.shields.io/badge/Bastion-GLP%20v1.05-blue) ![Free PALESTINE](https://img.shields.io/badge/Free-PALESTINE-darkgreen)<br>
+![Java 8](https://img.shields.io/badge/Java-8-%23f89820?labelColor=%235382a1) ![Ely.by Approved](https://img.shields.io/badge/Ely.by-Approved-brightgreen) ![Bastion GLP License](https://img.shields.io/badge/Bastion-GSLP%20v2.53-blue) ![Free PALESTINE](https://img.shields.io/badge/Free-PALESTINE-darkgreen)<br>
 Everything Minecraft related. Authentication, Launching and much more!  
 
 ## Ely.by - FortressAPI
